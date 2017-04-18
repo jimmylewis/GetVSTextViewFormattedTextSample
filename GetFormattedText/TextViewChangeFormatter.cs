@@ -100,7 +100,7 @@ namespace GetFormattedText
             return result;
         }
 
-        public IEnumerable<(SnapshotSpan Span, TextFormattingRunProperties Formatting)> GetTextSpansWithFormatting(ITextBuffer textBuffer)
+        private IEnumerable<(SnapshotSpan Span, TextFormattingRunProperties Formatting)> GetTextSpansWithFormatting(ITextBuffer textBuffer)
         {
             var wholeBufferSpan = new SnapshotSpan(textBuffer.CurrentSnapshot, 0, textBuffer.CurrentSnapshot.Length);
             var tags = _classificationAggregator.GetTags(wholeBufferSpan);
